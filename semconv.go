@@ -24,6 +24,8 @@ const (
 	LanternCloudRouteStaticAddress    semconvCustomKey = "route.static_address"
 	LanternCloudRouteStaticFrontendID semconvCustomKey = "route.static_frontend_id"
 	LanternCloudRouteCreatedAt        semconvCustomKey = "route.created_at"
+	LanternCloudRouteReleaseForce     semconvCustomKey = "route.release.force"
+	LanternCloudRouteDeprecated       semconvCustomKey = "route.deprecated"
 )
 
 // Lantern cloud EIPs
