@@ -3,7 +3,7 @@ package semconv
 
 import "go.opentelemetry.io/otel/attribute"
 
-// An SemconvCustomKey defines a custom semantic convention for consistent telemetry naming.
+// A SemconvCustomKey defines a custom semantic convention for consistent telemetry naming.
 type SemconvCustomKey attribute.Key
 
 // Lantern cloud Proxies
