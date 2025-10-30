@@ -39,7 +39,7 @@ const (
 	LanternCloudEIPFrontendProviderID SemconvCustomKey = "eip.frontend_provider_id"
 	LanternCloudEIPSlotProviderID     SemconvCustomKey = "eip.slot_provider_id"
 	LanternCloudEIPSlotPrivateAddress SemconvCustomKey = "eip.slot_private_address"
-	LanterCloudEIPV6                  SemconvCustomKey = "eip.is_v6"
+	LanternCloudEIPV6                 SemconvCustomKey = "eip.is_v6"
 )
 
 // Lantern cloud tracks
