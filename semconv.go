@@ -49,7 +49,6 @@ const (
 
 // Client Info
 const (
-	UserIDKey                   SemconvCustomKey = "client.user_id"
 	ClientDeviceIDKey           SemconvCustomKey = "client.device_id"
 	ClientRegionKey             SemconvCustomKey = "client.region"
 	ClientPlatformKey           SemconvCustomKey = "client.platform"
