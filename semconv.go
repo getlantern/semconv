@@ -46,3 +46,16 @@ const (
 const (
 	LanternCloudTrackName SemconvCustomKey = "track.name"
 )
+
+// Client Info
+const (
+	UserIDKey                   SemconvCustomKey = "client.user_id"
+	ClientDeviceIDKey           SemconvCustomKey = "client.device_id"
+	ClientRegionKey             SemconvCustomKey = "client.region"
+	ClientPlatformKey           SemconvCustomKey = "client.platform"
+	ClientTierKey               SemconvCustomKey = "client.tier"
+	ClientAsnKey                SemconvCustomKey = "client.asn"
+	ClientTargetBackendKey      SemconvCustomKey = "client.target_backend"
+	ClientSupportedProtocolsKey SemconvCustomKey = "client.supported_protocols"
+	ClientIsDevClientKey        SemconvCustomKey = "client.is_dev"
+)
