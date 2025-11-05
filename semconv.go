@@ -56,5 +56,5 @@ const (
 	ClientAsnKey                SemconvCustomKey = "client.asn"
 	ClientTargetBackendKey      SemconvCustomKey = "client.target_backend"
 	ClientSupportedProtocolsKey SemconvCustomKey = "client.supported_protocols"
-	ClientIsDevClientKey        SemconvCustomKey = "client.is_dev"
+	ClientIsDevKey              SemconvCustomKey = "client.is_dev"
 )
