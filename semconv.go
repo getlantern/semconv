@@ -57,15 +57,3 @@ const (
 	ClientSupportedProtocolsKey attribute.Key = "client.supported_protocols"
 	ClientIsDevKey              attribute.Key = "client.is_dev"
 )
-
-// Client Info
-const (
-	ClientDeviceIDKey           SemconvCustomKey = "client.device_id"
-	ClientRegionKey             SemconvCustomKey = "client.region"
-	ClientPlatformKey           SemconvCustomKey = "client.platform"
-	ClientTierKey               SemconvCustomKey = "client.tier"
-	ClientAsnKey                SemconvCustomKey = "client.asn"
-	ClientTargetBackendKey      SemconvCustomKey = "client.target_backend"
-	ClientSupportedProtocolsKey SemconvCustomKey = "client.supported_protocols"
-	ClientIsDevKey              SemconvCustomKey = "client.is_dev"
-)
