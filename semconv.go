@@ -41,7 +41,7 @@ const (
 
 // Lantern cloud tracks
 const (
-	LanternCloudTrackName attribute.Key = "track.name"
+	TrackName attribute.Key = "track.name"
 )
 
 // Client Info
