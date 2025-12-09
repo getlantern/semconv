@@ -38,7 +38,7 @@ const (
 	EIPFrontendProviderIDKey attribute.Key = "eip.frontend_provider_id"
 	EIPSlotProviderIDKey     attribute.Key = "eip.slot_provider_id"
 	EIPSlotPrivateAddressKey attribute.Key = "eip.slot_private_address"
-	EIPV6Key                 attribute.Key = "eip.is_v6"
+	EIPIsV6Key               attribute.Key = "eip.is_v6"
 )
 
 // Lantern cloud tracks
