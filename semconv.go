@@ -12,31 +12,31 @@ const (
 
 // Lantern cloud routes
 const (
-	LanternCloudRouteID               attribute.Key = "route.id"
-	LanternCloudRouteMultipleIDs      attribute.Key = "route.multiple_ids"
-	LanternCloudRouteTrackName        attribute.Key = "route.track_name"
-	LanternCloudRoutePHostType        attribute.Key = "route.phost_type"
-	LanternCloudRouteIsV6             attribute.Key = "route.is_v6"
+	RouteIDKey                        attribute.Key = "route.id"
+	RouteMultipleIDsKey               attribute.Key = "route.multiple_ids"
+	RouteTrackNameKey                 attribute.Key = "route.track_name"
+	RoutePhostTypeKey                 attribute.Key = "route.phost_type"
+	RouteIsV6Key                      attribute.Key = "route.is_v6"
 	LanternCloudRouteEIP              attribute.Key = "route.eip"
 	LanternCloudRouteEIPProvider      attribute.Key = "route.eip_provider"
 	LanternCloudRouteEIPLocation      attribute.Key = "route.eip_location"
 	LanternCloudRouteStaticAddress    attribute.Key = "route.static_address"
 	LanternCloudRouteStaticFrontendID attribute.Key = "route.static_frontend_id"
 	LanternCloudRouteCreatedAt        attribute.Key = "route.created_at"
-	LanternCloudRouteReleaseForce     attribute.Key = "route.release.force"
-	LanternCloudRouteDeprecated       attribute.Key = "route.deprecated"
+	RouteReleaseForceKey              attribute.Key = "route.release.force"
+	RouteDeprecatedKey                attribute.Key = "route.deprecated"
 )
 
 // Lantern cloud EIPs
 const (
-	LanternCloudEIPID                 attribute.Key = "eip.id"
-	LanternCloudEIPProviderID         attribute.Key = "eip.provider_id"
-	LanternCloudEIPAddress            attribute.Key = "eip.address"
-	LanternCloudEIPFrontendID         attribute.Key = "eip.frontend_id"
-	LanternCloudEIPFrontendProviderID attribute.Key = "eip.frontend_provider_id"
-	LanternCloudEIPSlotProviderID     attribute.Key = "eip.slot_provider_id"
-	LanternCloudEIPSlotPrivateAddress attribute.Key = "eip.slot_private_address"
-	LanternCloudEIPV6                 attribute.Key = "eip.is_v6"
+	EIPIDKey                 attribute.Key = "eip.id"
+	EIPProviderIDKey         attribute.Key = "eip.provider_id"
+	EIPAddressKey            attribute.Key = "eip.address"
+	EIPFrontendIDKey         attribute.Key = "eip.frontend_id"
+	EIPFrontendProviderIDKey attribute.Key = "eip.frontend_provider_id"
+	EIPSlotProviderIDKey     attribute.Key = "eip.slot_provider_id"
+	EIPSlotPrivateAddressKey attribute.Key = "eip.slot_private_address"
+	EIPV6Key                 attribute.Key = "eip.is_v6"
 )
 
 // Lantern cloud tracks
