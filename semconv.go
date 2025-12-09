@@ -12,19 +12,21 @@ const (
 
 // Lantern cloud routes
 const (
-	RouteIDKey                        attribute.Key = "route.id"
-	RouteMultipleIDsKey               attribute.Key = "route.multiple_ids"
-	RouteTrackNameKey                 attribute.Key = "route.track_name"
-	RoutePhostTypeKey                 attribute.Key = "route.phost_type"
-	RouteIsV6Key                      attribute.Key = "route.is_v6"
-	LanternCloudRouteEIP              attribute.Key = "route.eip"
-	LanternCloudRouteEIPProvider      attribute.Key = "route.eip_provider"
-	LanternCloudRouteEIPLocation      attribute.Key = "route.eip_location"
-	LanternCloudRouteStaticAddress    attribute.Key = "route.static_address"
-	LanternCloudRouteStaticFrontendID attribute.Key = "route.static_frontend_id"
-	LanternCloudRouteCreatedAt        attribute.Key = "route.created_at"
-	RouteReleaseForceKey              attribute.Key = "route.release.force"
-	RouteDeprecatedKey                attribute.Key = "route.deprecated"
+	RouteIDKey               attribute.Key = "route.id"
+	RouteMultipleIDsKey      attribute.Key = "route.multiple_ids"
+	RouteTrackNameKey        attribute.Key = "route.track_name"
+	RouteRegionKey           attribute.Key = "route.region"
+	RoutePhostTypeKey        attribute.Key = "route.phost_type"
+	RoutePhostNameKey        attribute.Key = "route.phost_name"
+	RouteIsV6Key             attribute.Key = "route.is_v6"
+	RouteEIPKey              attribute.Key = "route.eip"
+	RouteEIPProviderKey      attribute.Key = "route.eip_provider"
+	RouteEIPLocationKey      attribute.Key = "route.eip_location"
+	RouteStaticAddressKey    attribute.Key = "route.static_address"
+	RouteStaticFrontendIDKey attribute.Key = "route.static_frontend_id"
+	RouteCreatedAtKey        attribute.Key = "route.created_at"
+	RouteReleaseForceKey     attribute.Key = "route.release.force"
+	RouteDeprecatedKey       attribute.Key = "route.deprecated"
 )
 
 // Lantern cloud EIPs
