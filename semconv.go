@@ -43,8 +43,15 @@ const (
 
 // Lantern cloud tracks
 const (
-	TrackNameKey attribute.Key = "track.name"
-	TrackIDKey   attribute.Key = "track.id"
+	TrackNameKey            attribute.Key = "track.name"
+	TrackIDKey              attribute.Key = "track.id"
+	TrackDisabledKey        attribute.Key = "track.disabled"
+	TrackTargetRegionsKey   attribute.Key = "track.target_regions"
+	TrackTargetPlatformsKey attribute.Key = "track.target_platforms"
+	TrackTargetTierKey      attribute.Key = "track.target_tier"
+	TrackClientVersionKey   attribute.Key = "track.client_version"
+	TrackClientFloorKey     attribute.Key = "track.client_floor"
+	TrackClientCeilKey      attribute.Key = "track.client_ceil"
 )
 
 // Lantern cloud assignments
