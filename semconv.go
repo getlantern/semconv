@@ -47,6 +47,11 @@ const (
 	TrackIDKey   attribute.Key = "track.id"
 )
 
+// Lantern cloud assignments
+const (
+	AssignmentCachedKey attribute.Key = "assignment.cached"
+)
+
 // Client Info
 const (
 	ClientDeviceIDKey           attribute.Key = "client.device_id"
@@ -57,4 +62,6 @@ const (
 	ClientTargetBackendKey      attribute.Key = "client.target_backend"
 	ClientSupportedProtocolsKey attribute.Key = "client.supported_protocols"
 	ClientIsDevKey              attribute.Key = "client.is_dev"
+	ClientVersionKey            attribute.Key = "client.version"
+	ClientPreferredRegionKey    attribute.Key = "client.preferred_region"
 )
