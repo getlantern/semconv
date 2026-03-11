@@ -71,4 +71,21 @@ const (
 	ClientIsDevKey              attribute.Key = "client.is_dev"
 	ClientVersionKey            attribute.Key = "client.version"
 	ClientPreferredRegionKey    attribute.Key = "client.preferred_region"
+	ClientIsProKey              attribute.Key = "client.is_pro"
+)
+
+// Proxy resource attributes
+const (
+	ProxyNameKey             attribute.Key = "proxy.name"
+	ProxyProtocolKey         attribute.Key = "proxy.protocol"
+	ProxyTrackKey            attribute.Key = "proxy.track"
+	ProxyProviderKey         attribute.Key = "proxy.provider"
+	ProxyFrontendProviderKey attribute.Key = "proxy.frontend_provider"
+)
+
+// Proxy connection attributes (sing-box routing)
+const (
+	ProxyInboundKey     attribute.Key = "proxy.inbound"
+	ProxyInboundTypeKey attribute.Key = "proxy.inbound_type"
+	ProxyOutboundKey    attribute.Key = "proxy.outbound"
 )
