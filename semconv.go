@@ -1,7 +1,15 @@
-// package semconv defines custom semantic conventions not covered by otel
+// Package semconv defines custom semantic conventions not covered by otel
 package semconv
 
-import "go.opentelemetry.io/otel/attribute"
+import (
+	"go.opentelemetry.io/otel/attribute"
+
+	// Re-export all upstream OTel semantic conventions.
+	. "go.opentelemetry.io/otel/semconv/v1.37.0"
+)
+
+// Anchor the dot-import so the compiler doesn't complain.
+var _ = SchemaURL
 
 // Lantern cloud Proxies
 const (
