@@ -1,7 +1,15 @@
-// package semconv defines custom semantic conventions not covered by otel
+// Package semconv defines custom semantic conventions not covered by otel
 package semconv
 
-import "go.opentelemetry.io/otel/attribute"
+import (
+	"go.opentelemetry.io/otel/attribute"
+
+	// Re-export all upstream OTel semantic conventions.
+	. "go.opentelemetry.io/otel/semconv/v1.37.0"
+)
+
+// Anchor the dot-import so the compiler doesn't complain.
+var _ = SchemaURL
 
 // Lantern cloud Proxies
 const (
@@ -57,6 +65,55 @@ const (
 // Lantern cloud assignments
 const (
 	AssignmentCachedKey attribute.Key = "assignment.cached"
+)
+
+// Bandit proxy assignment — span names
+const (
+	BanditSpanSelect        = "bandit.select"
+	BanditSpanCallback      = "bandit.callback"
+	BanditSpanReaper        = "bandit.reaper"
+	BanditSpanReaperExpired = "bandit.reaper.expired"
+)
+
+// Bandit proxy assignment — metric names
+const (
+	BanditMetricSelections           = "bandit.selections"
+	BanditMetricCallbacks            = "bandit.callbacks"
+	BanditMetricRepeatCallbacks      = "bandit.repeat_callbacks"
+	BanditMetricCallbackLatency      = "bandit.callback_latency_ms"
+	BanditMetricReward               = "bandit.reward"
+	BanditMetricProbesExpired        = "bandit.probes_expired"
+	BanditMetricExpiredProbeAge      = "bandit.expired_probe_age_ms"
+	BanditMetricVPSRoutes            = "bandit.vps_routes"
+	BanditMetricVPSProvision         = "bandit.vps_provision_ms"
+	BanditMetricRoutesBlocked        = "bandit.routes_blocked"
+	BanditMetricRoutesBlockedPending = "bandit.routes_blocked_pending"
+	BanditMetricRoutesDeprecated     = "bandit.routes_deprecated"
+)
+
+// Bandit proxy assignment — span attribute keys
+const (
+	BanditArmIDKey               attribute.Key = "bandit.arm_id"
+	BanditASNKey                 attribute.Key = "bandit.asn"
+	BanditCountryKey             attribute.Key = "bandit.country"
+	BanditTrackIDKey             attribute.Key = "bandit.track_id"
+	BanditTrackNameKey           attribute.Key = "bandit.track_name"
+	BanditRegionNameKey          attribute.Key = "bandit.region_name"
+	BanditProviderKey            attribute.Key = "bandit.provider"
+	BanditRouteIDKey             attribute.Key = "bandit.route_id"
+	BanditCallbackLatencyKey     attribute.Key = "bandit.callback_latency"
+	BanditProbeAgeSecondsKey     attribute.Key = "bandit.probe_age_seconds"
+	BanditFirstCallbackKey       attribute.Key = "bandit.first_callback"
+	BanditNumCandidateRegionsKey attribute.Key = "bandit.num_candidate_regions"
+	BanditNumCandidateArmsKey    attribute.Key = "bandit.num_candidate_arms"
+	BanditBlockedArmsKey         attribute.Key = "bandit.blocked_arms"
+	BanditNumSelectedKey         attribute.Key = "bandit.num_selected"
+	BanditSelectedArmsKey        attribute.Key = "bandit.selected_arms"
+	BanditBlockedRouteCountKey   attribute.Key = "bandit.blocked_route_count"
+	BanditDeprecatedCountKey     attribute.Key = "bandit.deprecated_count"
+	BanditReaperExpiredProbesKey attribute.Key = "bandit.reaper.expired_probes"
+	BanditActiveKey              attribute.Key = "bandit.active"
+	BanditCacheHitKey            attribute.Key = "bandit.cache_hit"
 )
 
 // Client Info
