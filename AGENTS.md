@@ -6,7 +6,7 @@ adds custom keys for Lantern-specific concepts.
 
 ## Rules
 
-1. **Never hardcode attribute key strings.** Always use `semconv.*` constants.
+1. **Avoid hardcoded attribute key strings.** Use `semconv.*` constants to aid correlation.
 2. **Prefer standard OTel keys** when one exists for the concept. Only use
    custom keys for Lantern-specific domains (proxies, routes, tracks, bandit,
    clients, EIPs).
