@@ -10,16 +10,17 @@ adds custom keys for Lantern-specific concepts.
 2. **Prefer standard OTel keys** when one exists for the concept. Only use
    custom keys for Lantern-specific domains (proxies, routes, tracks, bandit,
    clients, EIPs).
-3. **Align with existing usage.** Before adding a new key, check `semconv.go`
-   and grep across services for how similar resources are already described.
+3. **Align with existing usage.** Before adding a new key, check `custom.go`
+   and `standard.go`, and grep across services for how similar resources are
+   already described.
 4. **Naming matters for incident response.** These keys power dashboards and
    alerts. Consistent naming lets on-call engineers query across services.
 
 ## Structure
 
-- `semconv.go` — all key definitions, grouped by domain
-- Standard OTel keys are available via dot-import of
-  `go.opentelemetry.io/otel/semconv/v1.37.0`
+- `standard.go` — re-exports of standard OTel semconv symbols (pinned to
+  `v1.37.0`). Add new re-exports here when a service needs an upstream key.
+- `custom.go` — Lantern-specific attribute keys, grouped by domain
 
 ## Expected Resources
 
