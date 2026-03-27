@@ -7,9 +7,10 @@ adds custom keys for Lantern-specific concepts.
 ## Rules
 
 1. **Avoid hardcoded attribute key strings.** Use `semconv.*` constants to aid correlation.
-2. **Prefer standard OTel keys** when one exists for the concept. Only use
-   custom keys for Lantern-specific domains (proxies, routes, tracks, bandit,
-   clients, EIPs).
+2. **Prefer standard OTel keys** when one exists for the concept. DNS, database
+   services, and internal OTel instrumentation already emit standard keys, so
+   using them ensures correlation. Only use custom keys for Lantern-specific
+   domains (proxies, routes, tracks, bandit, clients, EIPs).
 3. **Align with existing usage.** Before adding a new key, check `custom.go`
    and `standard.go`, and grep across services for how similar resources are
    already described.
