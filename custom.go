@@ -1,15 +1,9 @@
-// Package semconv defines custom semantic conventions not covered by otel
+// Package semconv defines semantic conventions for Lantern telemetry.
+// Standard OTel conventions are re-exported in standard.go; this file
+// contains Lantern-specific keys.
 package semconv
 
-import (
-	"go.opentelemetry.io/otel/attribute"
-
-	// Re-export all upstream OTel semantic conventions.
-	. "go.opentelemetry.io/otel/semconv/v1.37.0"
-)
-
-// Anchor the dot-import so the compiler doesn't complain.
-var _ = SchemaURL
+import "go.opentelemetry.io/otel/attribute"
 
 // Lantern cloud Proxies
 const (

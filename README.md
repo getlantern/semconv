@@ -6,29 +6,38 @@ Standard and custom semantic conventions for creating consistent, comparable `at
 
 Import `semconv` and use it exclusively for defining attribute keys in telemetry.
 ```go
-import "github.com/getlantern/semconv"
+import (
+	"github.com/getlantern/semconv"
+	"go.opentelemetry.io/otel/attribute"
+)
 ```
 
-Standard OTel keys may have convenience functions, but custom keys do not.
-
+Example attribute map:
 ```go
 attrs := map[attribute.Key]attribute.Value{
-	semconv.GeoCountryISOCodeKey: attribute.StringValue("US"),         // standard
-	semconv.HostNameKey:          attribute.StringValue("phost-abcd"), // standard
-	semconv.TrackNameKey:         attribute.StringValue("nidoran"),    // custom
-	semconv.ProxyProtocolKey:     attribute.StringValue("HTTPS"),      // custom
+	semconv.GeoCountryISOCodeKey: attribute.StringValue("US"),
+	semconv.HostNameKey:          attribute.StringValue("phost-abcd"),
+	semconv.TrackNameKey:         attribute.StringValue("nidoran"),
+	semconv.ProxyProtocolKey:     attribute.StringValue("HTTPS"),
 }
 ```
 
+Example attribute slice:
 ```go
 attrs := []attribute.KeyValue{
-	semconv.GeoCountryISOCode("US"),
-	semconv.HostName("phost-abcd"),
-	attribute.KeyValue{
+	{
+		Key:   semconv.GeoCountryISOCodeKey,
+		Value: attribute.StringValue("US"),
+	},
+	{
+		Key:   semconv.HostNameKey,
+		Value: attribute.StringValue("phost-abcd"),
+	},
+	{
 		Key:   semconv.TrackNameKey,
 		Value: attribute.StringValue("nidoran"),
 	},
-	attribute.KeyValue{
+	{
 		Key:   semconv.ProxyProtocolKey,
 		Value: attribute.StringValue("HTTPS"),
 	},
@@ -42,5 +51,5 @@ attrs := []attribute.KeyValue{
 - https://pkg.go.dev/go.opentelemetry.io/otel/semconv
 
 ### custom
-- [`semconv.go`](./semconv.go)
+- [`custom.go`](./custom.go)
 
