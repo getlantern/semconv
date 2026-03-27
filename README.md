@@ -51,5 +51,5 @@ attrs := []attribute.KeyValue{
 - https://pkg.go.dev/go.opentelemetry.io/otel/semconv
 
 ### custom
-- [`semconv.go`](./semconv.go)
+- [`custom.go`](./custom.go)
 
