@@ -6,7 +6,10 @@ Standard and custom semantic conventions for creating consistent, comparable `at
 
 Import `semconv` and use it exclusively for defining attribute keys in telemetry.
 ```go
-import "github.com/getlantern/semconv"
+import (
+	"github.com/getlantern/semconv"
+	"go.opentelemetry.io/otel/attribute"
+)
 ```
 
 Example attribute map:
