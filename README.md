@@ -9,26 +9,32 @@ Import `semconv` and use it exclusively for defining attribute keys in telemetry
 import "github.com/getlantern/semconv"
 ```
 
-Standard OTel keys may have convenience functions, but custom keys do not.
-
+Example attribute map:
 ```go
 attrs := map[attribute.Key]attribute.Value{
-	semconv.GeoCountryISOCodeKey: attribute.StringValue("US"),         // standard
-	semconv.HostNameKey:          attribute.StringValue("phost-abcd"), // standard
-	semconv.TrackNameKey:         attribute.StringValue("nidoran"),    // custom
-	semconv.ProxyProtocolKey:     attribute.StringValue("HTTPS"),      // custom
+	semconv.GeoCountryISOCodeKey: attribute.StringValue("US"),
+	semconv.HostNameKey:          attribute.StringValue("phost-abcd"),
+	semconv.TrackNameKey:         attribute.StringValue("nidoran"),
+	semconv.ProxyProtocolKey:     attribute.StringValue("HTTPS"),
 }
 ```
 
+Example attribute slice:
 ```go
 attrs := []attribute.KeyValue{
-	semconv.GeoCountryISOCode("US"),
-	semconv.HostName("phost-abcd"),
-	attribute.KeyValue{
+	{
+		Key:   semconv.GeoCountryISOCodeKey,
+		Value: attribute.StringValue("US"),
+	},
+	{
+		Key:   semconv.HostNameKey,
+		Value: attribute.StringValue("phost-abcd"),
+	},
+	{
 		Key:   semconv.TrackNameKey,
 		Value: attribute.StringValue("nidoran"),
 	},
-	attribute.KeyValue{
+	{
 		Key:   semconv.ProxyProtocolKey,
 		Value: attribute.StringValue("HTTPS"),
 	},

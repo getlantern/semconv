@@ -2,8 +2,6 @@ package semconv
 
 import (
 	otel "go.opentelemetry.io/otel/semconv/v1.37.0"
-
-	"go.opentelemetry.io/otel/attribute"
 )
 
 // Re-exported standard OTel semantic conventions.
@@ -20,19 +18,10 @@ const (
 	ServiceNamespaceKey = otel.ServiceNamespaceKey
 )
 
-// Service convenience constructors
-var (
-	ServiceName      = otel.ServiceName
-	ServiceVersion   = otel.ServiceVersion
-	ServiceNamespace = otel.ServiceNamespace
-)
-
 // Deployment
 
 // DeploymentEnvironmentNameKey is "prod", "staging", or "dev".
 const DeploymentEnvironmentNameKey = otel.DeploymentEnvironmentNameKey
-
-var DeploymentEnvironmentName = otel.DeploymentEnvironmentName
 
 // Host
 const (
@@ -47,19 +36,19 @@ const (
 // Network
 const (
 	// NetworkPeerAddressKey is the remote IP, e.g. "10.0.0.5".
-	NetworkPeerAddressKey attribute.Key = otel.NetworkPeerAddressKey
+	NetworkPeerAddressKey = otel.NetworkPeerAddressKey
 	// NetworkPeerPortKey is the remote port, e.g. 443.
-	NetworkPeerPortKey attribute.Key = otel.NetworkPeerPortKey
+	NetworkPeerPortKey = otel.NetworkPeerPortKey
 )
 
 // HTTP
 const (
 	// HTTPRequestMethodKey is "GET", "POST", etc.
-	HTTPRequestMethodKey attribute.Key = otel.HTTPRequestMethodKey
+	HTTPRequestMethodKey = otel.HTTPRequestMethodKey
 	// HTTPResponseStatusCodeKey is the integer status, e.g. 200, 502.
-	HTTPResponseStatusCodeKey attribute.Key = otel.HTTPResponseStatusCodeKey
+	HTTPResponseStatusCodeKey = otel.HTTPResponseStatusCodeKey
 	// HTTPRouteKey is the matched route pattern, e.g. "/users/:id".
-	HTTPRouteKey attribute.Key = otel.HTTPRouteKey
+	HTTPRouteKey = otel.HTTPRouteKey
 )
 
 // Geo
@@ -81,4 +70,4 @@ const (
 // Error
 
 // ErrorTypeKey classifies the error, e.g. "timeout", "cancel".
-const ErrorTypeKey attribute.Key = otel.ErrorTypeKey
+const ErrorTypeKey = otel.ErrorTypeKey
