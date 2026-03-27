@@ -33,12 +33,24 @@ const (
 	HostArchKey = otel.HostArchKey
 )
 
+// OS
+const (
+	// OSNameKey is the operating system name, e.g. "linux", "darwin".
+	OSNameKey = otel.OSNameKey
+	// OSVersionKey is the OS version string, e.g. "14.0", "22.04".
+	OSVersionKey = otel.OSVersionKey
+)
+
 // Network
 const (
 	// NetworkPeerAddressKey is the remote IP, e.g. "10.0.0.5".
 	NetworkPeerAddressKey = otel.NetworkPeerAddressKey
 	// NetworkPeerPortKey is the remote port, e.g. 443.
 	NetworkPeerPortKey = otel.NetworkPeerPortKey
+	// NetworkIODirectionKey is "transmit" or "receive".
+	NetworkIODirectionKey = otel.NetworkIODirectionKey
+	// NetworkProtocolNameKey is the protocol, e.g. "tcp", "udp".
+	NetworkProtocolNameKey = otel.NetworkProtocolNameKey
 )
 
 // HTTP
