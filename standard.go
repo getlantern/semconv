@@ -1,7 +1,7 @@
 package semconv
 
 import (
-	otel "go.opentelemetry.io/otel/semconv/v1.37.0"
+	otel "go.opentelemetry.io/otel/semconv/v1.34.0"
 )
 
 // Re-exported standard OTel semantic conventions.
