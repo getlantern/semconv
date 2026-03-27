@@ -129,6 +129,8 @@ const (
 	ClientVersionKey            attribute.Key = "client.version"
 	ClientPreferredRegionKey    attribute.Key = "client.preferred_region"
 	ClientIsProKey              attribute.Key = "client.is_pro"
+	ClientISPKey                attribute.Key = "client.isp"
+	ClientAppKey                attribute.Key = "client.app"
 )
 
 // Proxy resource attributes
