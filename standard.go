@@ -18,6 +18,14 @@ const (
 	ServiceNamespaceKey = otel.ServiceNamespaceKey
 )
 
+// Cloud
+const (
+	// CloudProviderKey is the cloud provider, e.g. "aws", "gcp", "azure".
+	CloudProviderKey = otel.CloudProviderKey
+	// CloudAvailabilityZoneKey is the zone, e.g. "us-east-1a".
+	CloudAvailabilityZoneKey = otel.CloudAvailabilityZoneKey
+)
+
 // Deployment
 
 // DeploymentEnvironmentNameKey is "prod", "staging", or "dev".
