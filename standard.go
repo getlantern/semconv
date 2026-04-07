@@ -26,6 +26,33 @@ const (
 	CloudAvailabilityZoneKey = otel.CloudAvailabilityZoneKey
 )
 
+// Container
+const (
+	// ContainerCommandArgsKey represents all the command arguments, including the executable
+	// itself, as a string slice.
+	ContainerCommandArgsKey = otel.ContainerCommandArgsKey
+	// ContainerCommandKey is the command used to run the container.
+	ContainerCommandKey = otel.ContainerCommandKey
+	// ContainerCommandLineKey represents the full command run by the container as a single string.
+	ContainerCommandLineKey = otel.ContainerCommandLineKey
+	// ContainerIDKey is the container ID (usually a UUID)
+	ContainerIDKey = otel.ContainerIDKey
+	// ContainerImageIDKey is the the runtime-specific image identifier (usually a hash
+	// algorithm followed by the hash itself).
+	ContainerImageIDKey = otel.ContainerImageIDKey
+	// ContainerImageNameKey is the name of the image the container was built on.
+	ContainerImageNameKey = otel.ContainerImageNameKey
+	// ContainerImageRepoDigestsKey are the repo digests of the container image as provided by
+	// the container runtime, as a string slice.
+	ContainerImageRepoDigestsKey = otel.ContainerImageRepoDigestsKey
+	// ContainerImageTagsKey represents the image tags.
+	ContainerImageTagsKey = otel.ContainerImageTagsKey
+	// ContainerNameKey is the name of the container.
+	ContainerNameKey = otel.ContainerNameKey
+	// ContainerRuntimeKey is the runtime managing this container.
+	ContainerRuntimeKey = otel.ContainerRuntimeKey
+)
+
 // Deployment
 
 // DeploymentEnvironmentNameKey is "prod", "staging", or "dev".
