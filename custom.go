@@ -11,7 +11,9 @@ const (
 	ProxyGatewayKey       attribute.Key = "proxy.gateway"
 	HostInterfaceCountKey attribute.Key = "host.interface.count"
 	ProxyFrontendSyncTime attribute.Key = "proxy.frontend_sync_time"
+	ProxyFrontendName     attribute.Key = "proxy.frontend_name"
 	ProxyHostSyncTime     attribute.Key = "proxy.host_sync_time"
+	ProxyHostNameKey      attribute.Key = "proxy.host_name"
 )
 
 // Lantern cloud routes
