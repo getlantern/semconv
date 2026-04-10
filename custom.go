@@ -10,10 +10,10 @@ const (
 	ProxyCIDRKey          attribute.Key = "proxy.cidr"
 	ProxyGatewayKey       attribute.Key = "proxy.gateway"
 	HostInterfaceCountKey attribute.Key = "host.interface.count"
-	ProxyFrontendSyncTime attribute.Key = "proxy.frontend_sync_time"
-	ProxyFrontendName     attribute.Key = "proxy.frontend_name"
-	ProxyHostSyncTime     attribute.Key = "proxy.host_sync_time"
-	ProxyHostNameKey      attribute.Key = "proxy.host_name"
+	ProxyFrontendSyncCount attribute.Key = "proxy.frontend_sync_count"
+	ProxyFrontendName      attribute.Key = "proxy.frontend_name"
+	ProxyHostSyncCount     attribute.Key = "proxy.host_sync_count"
+	ProxyHostNameKey       attribute.Key = "proxy.host_name"
 )
 
 // Lantern cloud routes
