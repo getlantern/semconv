@@ -7,11 +7,12 @@ import "go.opentelemetry.io/otel/attribute"
 
 // Lantern cloud Proxies
 const (
-	ProxyCIDRKey          attribute.Key = "proxy.cidr"
-	ProxyGatewayKey       attribute.Key = "proxy.gateway"
-	HostInterfaceCountKey attribute.Key = "host.interface.count"
+	ProxyCIDRKey           attribute.Key = "proxy.cidr"
+	ProxyGatewayKey        attribute.Key = "proxy.gateway"
+	HostInterfaceCountKey  attribute.Key = "host.interface.count"
 	ProxyFrontendSyncCount attribute.Key = "proxy.frontend_sync_count"
 	ProxyFrontendName      attribute.Key = "proxy.frontend_name"
+	ProxyFrontendID        attribute.Key = "proxy.frontend_id"
 	ProxyHostSyncCount     attribute.Key = "proxy.host_sync_count"
 	ProxyHostNameKey       attribute.Key = "proxy.host_name"
 )
