@@ -130,6 +130,7 @@ const (
 	ClientIsProKey              attribute.Key = "client.is_pro"
 	ClientISPKey                attribute.Key = "client.isp"
 	ClientAppKey                attribute.Key = "client.app"
+	ClientArchitectureKey       attribute.Key = "client.arch"
 )
 
 // Proxy resource attributes
