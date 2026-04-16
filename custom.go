@@ -92,13 +92,6 @@ const (
 // Bandit proxy assignment — span attribute keys
 const (
 	BanditArmIDKey               attribute.Key = "bandit.arm_id"
-	BanditASNKey                 attribute.Key = "bandit.asn"
-	BanditCountryKey             attribute.Key = "bandit.country"
-	BanditTrackIDKey             attribute.Key = "bandit.track_id"
-	BanditTrackNameKey           attribute.Key = "bandit.track_name"
-	BanditRegionNameKey          attribute.Key = "bandit.region_name"
-	BanditProviderKey            attribute.Key = "bandit.provider"
-	BanditRouteIDKey             attribute.Key = "bandit.route_id"
 	BanditCallbackLatencyKey     attribute.Key = "bandit.callback_latency"
 	BanditProbeAgeSecondsKey     attribute.Key = "bandit.probe_age_seconds"
 	BanditFirstCallbackKey       attribute.Key = "bandit.first_callback"
