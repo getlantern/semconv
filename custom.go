@@ -7,9 +7,9 @@ import "go.opentelemetry.io/otel/attribute"
 
 // Lantern cloud Proxies
 const (
-	ProxyCIDRKey          attribute.Key = "proxy.cidr"
-	ProxyGatewayKey       attribute.Key = "proxy.gateway"
-	HostInterfaceCountKey attribute.Key = "host.interface.count"
+	ProxyCIDRKey           attribute.Key = "proxy.cidr"
+	ProxyGatewayKey        attribute.Key = "proxy.gateway"
+	HostInterfaceCountKey  attribute.Key = "host.interface.count"
 	ProxyFrontendSyncCount attribute.Key = "proxy.frontend_sync_count"
 	ProxyFrontendName      attribute.Key = "proxy.frontend_name"
 	ProxyHostSyncCount     attribute.Key = "proxy.host_sync_count"
@@ -91,10 +91,27 @@ const (
 
 // Bandit proxy assignment — span attribute keys
 const (
-	BanditArmIDKey               attribute.Key = "bandit.arm_id"
-	BanditCallbackLatencyKey     attribute.Key = "bandit.callback_latency"
-	BanditProbeAgeSecondsKey     attribute.Key = "bandit.probe_age_seconds"
-	BanditFirstCallbackKey       attribute.Key = "bandit.first_callback"
+	BanditArmIDKey attribute.Key = "bandit.arm_id"
+	// BanditCallbackLatencyKey is the proxy roundtrip time (in ms) AFTER
+	// subtracting the client-reported queue delay. Paired with
+	// BanditCallbackLatencyTotalMsKey and BanditClientQueueDelayMsKey to
+	// decompose stall location (client queue vs proxy RTT).
+	BanditCallbackLatencyKey attribute.Key = "bandit.callback_latency"
+	// BanditCallbackLatencyTotalMsKey is the end-to-end probe time
+	// (probe-created → callback-received on the server) BEFORE subtracting
+	// the client-reported queue delay.
+	BanditCallbackLatencyTotalMsKey attribute.Key = "bandit.callback_latency_total_ms"
+	// BanditClientQueueDelayMsKey is the client-reported time (ms) that the
+	// URL-test spent in the client's worker-pool queue before the outbound
+	// HTTP request fired. Clamped server-side at 80% of the observed latency
+	// to prevent reward manipulation via inflated queue reports.
+	BanditClientQueueDelayMsKey attribute.Key = "bandit.client_queue_delay_ms"
+	BanditProbeAgeSecondsKey    attribute.Key = "bandit.probe_age_seconds"
+	BanditFirstCallbackKey      attribute.Key = "bandit.first_callback"
+	// BanditTokenPrefixKey is a short prefix of the callback probe token used
+	// in logs/spans so operators can correlate entries without leaking the
+	// full token (which acts as the callback capability).
+	BanditTokenPrefixKey attribute.Key = "bandit.token_prefix"
 	BanditNumCandidateRegionsKey attribute.Key = "bandit.num_candidate_regions"
 	BanditNumCandidateArmsKey    attribute.Key = "bandit.num_candidate_arms"
 	BanditBlockedArmsKey         attribute.Key = "bandit.blocked_arms"
@@ -122,6 +139,7 @@ const (
 	ClientIsProKey              attribute.Key = "client.is_pro"
 	ClientISPKey                attribute.Key = "client.isp"
 	ClientAppKey                attribute.Key = "client.app"
+	ClientArchitectureKey       attribute.Key = "client.arch"
 )
 
 // Proxy resource attributes
