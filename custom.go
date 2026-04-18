@@ -111,7 +111,7 @@ const (
 	// BanditTokenPrefixKey is a short prefix of the callback probe token used
 	// in logs/spans so operators can correlate entries without leaking the
 	// full token (which acts as the callback capability).
-	BanditTokenPrefixKey attribute.Key = "bandit.token_prefix"
+	BanditTokenPrefixKey         attribute.Key = "bandit.token_prefix"
 	BanditNumCandidateRegionsKey attribute.Key = "bandit.num_candidate_regions"
 	BanditNumCandidateArmsKey    attribute.Key = "bandit.num_candidate_arms"
 	BanditBlockedArmsKey         attribute.Key = "bandit.blocked_arms"
