@@ -67,10 +67,11 @@ const (
 
 // Bandit proxy assignment — span names
 const (
-	BanditSpanSelect        = "bandit.select"
-	BanditSpanCallback      = "bandit.callback"
-	BanditSpanReaper        = "bandit.reaper"
-	BanditSpanReaperExpired = "bandit.reaper.expired"
+	BanditSpanSelect            = "bandit.select"
+	BanditSpanCallback          = "bandit.callback"
+	BanditSpanReaper            = "bandit.reaper"
+	BanditSpanReaperExpired     = "bandit.reaper.expired"
+	BanditSpanArmCallbackReaper = "bandit.arm_callback_reaper"
 )
 
 // Bandit proxy assignment — metric names
@@ -87,6 +88,7 @@ const (
 	BanditMetricRoutesBlocked        = "bandit.routes_blocked"
 	BanditMetricRoutesBlockedPending = "bandit.routes_blocked_pending"
 	BanditMetricRoutesDeprecated     = "bandit.routes_deprecated"
+	BanditMetricArmCallbackAbsences  = "bandit.arm_callback_absences"
 )
 
 // Bandit proxy assignment — span attribute keys
@@ -118,17 +120,18 @@ const (
 	// BanditTokenPrefixKey is a short prefix of the callback probe token used
 	// in logs/spans so operators can correlate entries without leaking the
 	// full token (which acts as the callback capability).
-	BanditTokenPrefixKey         attribute.Key = "bandit.token_prefix"
-	BanditNumCandidateRegionsKey attribute.Key = "bandit.num_candidate_regions"
-	BanditNumCandidateArmsKey    attribute.Key = "bandit.num_candidate_arms"
-	BanditBlockedArmsKey         attribute.Key = "bandit.blocked_arms"
-	BanditNumSelectedKey         attribute.Key = "bandit.num_selected"
-	BanditSelectedArmsKey        attribute.Key = "bandit.selected_arms"
-	BanditBlockedRouteCountKey   attribute.Key = "bandit.blocked_route_count"
-	BanditDeprecatedCountKey     attribute.Key = "bandit.deprecated_count"
-	BanditReaperExpiredProbesKey attribute.Key = "bandit.reaper.expired_probes"
-	BanditActiveKey              attribute.Key = "bandit.active"
-	BanditCacheHitKey            attribute.Key = "bandit.cache_hit"
+	BanditTokenPrefixKey                attribute.Key = "bandit.token_prefix"
+	BanditNumCandidateRegionsKey        attribute.Key = "bandit.num_candidate_regions"
+	BanditNumCandidateArmsKey           attribute.Key = "bandit.num_candidate_arms"
+	BanditBlockedArmsKey                attribute.Key = "bandit.blocked_arms"
+	BanditNumSelectedKey                attribute.Key = "bandit.num_selected"
+	BanditSelectedArmsKey               attribute.Key = "bandit.selected_arms"
+	BanditBlockedRouteCountKey          attribute.Key = "bandit.blocked_route_count"
+	BanditDeprecatedCountKey            attribute.Key = "bandit.deprecated_count"
+	BanditReaperExpiredProbesKey        attribute.Key = "bandit.reaper.expired_probes"
+	BanditArmCallbackReaperNegativesKey attribute.Key = "bandit.arm_callback_reaper.negatives"
+	BanditActiveKey                     attribute.Key = "bandit.active"
+	BanditCacheHitKey                   attribute.Key = "bandit.cache_hit"
 )
 
 // Client Info
