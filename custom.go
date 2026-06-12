@@ -167,3 +167,10 @@ const (
 	ProxyInboundTypeKey attribute.Key = "proxy.inbound_type"
 	ProxyOutboundKey    attribute.Key = "proxy.outbound"
 )
+
+const (
+	// GeoSourceKey defines how a geolocation was determined.
+	//  - geolocation database (e.g. "maxmind")
+	//  - client attestation (e.g. "client")
+	GeoSourceKey attribute.Key = "geo.source"
+)
