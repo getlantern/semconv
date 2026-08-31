@@ -167,3 +167,49 @@ const (
 	ProxyInboundTypeKey attribute.Key = "proxy.inbound_type"
 	ProxyOutboundKey    attribute.Key = "proxy.outbound"
 )
+
+// Geneva server-side packet manipulation — metric names
+//
+// Deliberately absent: any metric or attribute carrying a strategy DNA or
+// candidate identifier. Candidate identity is attributed through server-issued
+// opaque tokens in the brain's own tables, never through telemetry labels, so a
+// per-candidate label would both leak that identity into SigNoz and make the
+// series cardinality unbounded in the GA's population size.
+const (
+	GenevaMetricPacketsIn      = "geneva.engine.packets_in"
+	GenevaMetricPacketsOut     = "geneva.engine.packets_out"
+	GenevaMetricBytesIn        = "geneva.engine.bytes_in"
+	GenevaMetricBytesOut       = "geneva.engine.bytes_out"
+	GenevaMetricOutcomes       = "geneva.engine.outcomes"
+	GenevaMetricErrors         = "geneva.engine.errors"
+	GenevaMetricPacketOverhead = "geneva.engine.packet_overhead"
+	GenevaMetricByteOverhead   = "geneva.engine.byte_overhead"
+	GenevaMetricVerdicts       = "geneva.runtime.verdicts"
+	GenevaMetricReinjections   = "geneva.runtime.reinjections"
+	GenevaMetricStrategySwaps  = "geneva.strategy_swaps"
+	GenevaMetricUptime         = "geneva.uptime"
+
+	// GenevaMetricInboundTCP counts inbound TCP packets on the steered port by
+	// GenevaTCPEventKey. It is the box-side censor-reachability signal: clients
+	// behind a censor cannot report a connection that never completed, so the
+	// syn-versus-data ratio per market is the only evidence of a test box IP
+	// being burned.
+	GenevaMetricInboundTCP = "geneva.censor.inbound_tcp"
+)
+
+// Geneva server-side packet manipulation — attribute keys
+const (
+	// GenevaModeKey is "prod" or "eval".
+	GenevaModeKey attribute.Key = "geneva.mode"
+	// GenevaOutcomeKey classifies what the strategy did to a packet:
+	// "unchanged", "dropped", "tampered", or "expanded".
+	GenevaOutcomeKey attribute.Key = "geneva.outcome"
+	// GenevaVerdictKey is the NFQUEUE verdict issued: "accepted", "dropped", or
+	// "modified".
+	GenevaVerdictKey attribute.Key = "geneva.verdict"
+	// GenevaReinjectionKey is the raw-socket reinjection result: "ok" or "failed".
+	GenevaReinjectionKey attribute.Key = "geneva.reinjection"
+	// GenevaTCPEventKey classifies an observed TCP packet by its flags and
+	// payload: "syn", "rst", "fin", "ack_only", or "data".
+	GenevaTCPEventKey attribute.Key = "geneva.tcp_event"
+)
