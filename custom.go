@@ -213,3 +213,9 @@ const (
 	// payload: "syn", "rst", "fin", "ack_only", or "data".
 	GenevaTCPEventKey attribute.Key = "geneva.tcp_event"
 )
+
+// Grants
+const (
+	GrantNameKey      attribute.Key = "grant.code"      // e.g. "otfsurge", "drlvision", "neabuild"
+	GrantIndicatorKey attribute.Key = "grant.indicator" // number only (e.g. "2.3", "1.1")
+)
