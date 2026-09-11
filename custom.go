@@ -216,6 +216,6 @@ const (
 
 // Grants
 const (
-	GrantNameKey      attribute.Key = "grant.code"      // e.g. "otfsurge", "drlvision", "neabuild"
+	GrantCodeKey      attribute.Key = "grant.code"      // e.g. "otfsurge", "drlvision", "neabuild"
 	GrantIndicatorKey attribute.Key = "grant.indicator" // number only (e.g. "2.3", "1.1")
 )
