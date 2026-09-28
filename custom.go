@@ -170,8 +170,8 @@ const (
 
 // Proxy metric names
 const (
-	ProxyMetricIO          = "proxy.io"          // bytes through a proxy, by direction
-	ProxyMetricActivations = "proxy.activations" // times proxy mode was turned on and proxied traffic
+	ProxyMetricIO          = "proxy.io"          // generic: bytes through a proxy, by direction
+	ProxyMetricActivations = "proxy.activations" // unbounded: times proxy mode was turned on and proxied traffic
 )
 
 // Geneva server-side packet manipulation — metric names
