@@ -161,17 +161,13 @@ const (
 	ProxyFrontendProviderKey attribute.Key = "proxy.frontend_provider"
 )
 
-// Proxy connection attributes (sing-box routing)
+// Proxy connection attributes
 const (
-	ProxyInboundKey     attribute.Key = "proxy.inbound"
-	ProxyInboundTypeKey attribute.Key = "proxy.inbound_type"
-	ProxyOutboundKey    attribute.Key = "proxy.outbound"
-)
-
-// Proxy — metric names
-const (
-	ProxyMetricIO          = "proxy.io"
-	ProxyMetricActivations = "proxy.activations"
+	ProxyInboundKey     attribute.Key = "proxy.inbound"      // sing-box
+	ProxyInboundTypeKey attribute.Key = "proxy.inbound_type" // sing-box
+	ProxyOutboundKey    attribute.Key = "proxy.outbound"     // sing-box
+	ProxyIOKey          attribute.Key = "proxy.io"           // generic: connection throughput
+	ProxyActivationsKey attribute.Key = "proxy.activations"  // unbounded: unique id for counting donor/consumer activations
 )
 
 // Geneva server-side packet manipulation — metric names
