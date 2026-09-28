@@ -168,6 +168,12 @@ const (
 	ProxyOutboundKey    attribute.Key = "proxy.outbound"
 )
 
+// Proxy — metric names
+const (
+	ProxyMetricIO          = "proxy.io"
+	ProxyMetricActivations = "proxy.activations"
+)
+
 // Geneva server-side packet manipulation — metric names
 //
 // Deliberately absent: any metric or attribute carrying a strategy DNA or
