@@ -247,3 +247,10 @@ const (
 	GrantCodeKey      attribute.Key = "grant.code"      // e.g. "otfsurge", "drlvision", "neabuild"
 	GrantIndicatorKey attribute.Key = "grant.indicator" // number only (e.g. "2.3", "1.1")
 )
+
+const (
+	// GeoSourceKey defines how a geolocation was determined.
+	//  - geolocation database (e.g. "maxmind")
+	//  - client attestation (e.g. "client")
+	GeoSourceKey attribute.Key = "geo.source"
+)
