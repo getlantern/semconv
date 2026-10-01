@@ -89,6 +89,10 @@ const (
 	BanditMetricRoutesBlockedPending = "bandit.routes_blocked_pending"
 	BanditMetricRoutesDeprecated     = "bandit.routes_deprecated"
 	BanditMetricArmCallbackAbsences  = "bandit.arm_callback_absences"
+	// BanditMetricProbeStalls counts callbacks a proxy reported with
+	// verdict=stalled: the probe request arrived but the client never
+	// acknowledged the response body.
+	BanditMetricProbeStalls = "bandit.probe_stalls"
 )
 
 // Bandit proxy assignment — span attribute keys
@@ -115,8 +119,26 @@ const (
 	// HTTP request fired. Clamped server-side at 80% of the observed latency
 	// to prevent reward manipulation via inflated queue reports.
 	BanditClientQueueDelayMsKey attribute.Key = "bandit.client_queue_delay_ms"
-	BanditProbeAgeSecondsKey    attribute.Key = "bandit.probe_age_seconds"
-	BanditFirstCallbackKey      attribute.Key = "bandit.first_callback"
+	// BanditProbeVerdictKey is the proxy's judgement of whether the client
+	// received the probe response: delivered, stalled or unknown. Set only on
+	// callbacks a proxy answered itself.
+	BanditProbeVerdictKey attribute.Key = "bandit.probe_verdict"
+	// BanditProbeDrainMsKey is the time (ms) the proxy spent waiting for the
+	// client to acknowledge the probe response. It is subtracted from the
+	// callback latency so proxy-answered probes rank like relayed ones.
+	BanditProbeDrainMsKey attribute.Key = "bandit.probe_drain_ms"
+	// BanditProbeAckedBytesKey is the number of bytes the client's TCP stack
+	// had acknowledged on the probe connection when the proxy reached its
+	// verdict.
+	BanditProbeAckedBytesKey attribute.Key = "bandit.probe_acked_bytes"
+	// BanditProbeRetransmitsKey is the TCP retransmission count on the probe
+	// connection as seen by the proxy.
+	BanditProbeRetransmitsKey attribute.Key = "bandit.probe_retransmits"
+	// BanditProbeRTTMsKey is the proxy's smoothed TCP RTT (ms) to the client
+	// on the probe connection.
+	BanditProbeRTTMsKey      attribute.Key = "bandit.probe_rtt_ms"
+	BanditProbeAgeSecondsKey attribute.Key = "bandit.probe_age_seconds"
+	BanditFirstCallbackKey   attribute.Key = "bandit.first_callback"
 	// BanditTokenPrefixKey is a short prefix of the callback probe token used
 	// in logs/spans so operators can correlate entries without leaking the
 	// full token (which acts as the callback capability).
