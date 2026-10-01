@@ -90,8 +90,8 @@ const (
 	BanditMetricRoutesDeprecated     = "bandit.routes_deprecated"
 	BanditMetricArmCallbackAbsences  = "bandit.arm_callback_absences"
 	// BanditMetricProbeStalls counts callbacks a proxy reported with
-	// verdict=stalled: the probe request arrived but the client never
-	// acknowledged the response body.
+	// verdict=stalled: the probe request arrived but the client did not
+	// acknowledge the full response body.
 	BanditMetricProbeStalls = "bandit.probe_stalls"
 )
 
