@@ -104,10 +104,7 @@ const (
 )
 
 // Exception
-const (
-	// ExceptionTypeKey is the kind of exception, e.g. "panic", "fatal error".
-	ExceptionTypeKey = otel.ExceptionTypeKey
-	// ExceptionMessageKey is the exception message, e.g.
-	// "runtime error: slice bounds out of range [:172] with capacity 128".
-	ExceptionMessageKey = otel.ExceptionMessageKey
-)
+
+// ExceptionMessageKey is the exception message, e.g.
+// "runtime error: slice bounds out of range [:172] with capacity 128".
+const ExceptionMessageKey = otel.ExceptionMessageKey
