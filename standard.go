@@ -91,3 +91,20 @@ const (
 
 // ErrorTypeKey classifies the error, e.g. "timeout", "cancel".
 const ErrorTypeKey = otel.ErrorTypeKey
+
+// Code location
+const (
+	// CodeFunctionNameKey is the fully qualified function, e.g.
+	// "github.com/sagernet/sing-vmess/vless.(*VisionConn).filterTLS".
+	CodeFunctionNameKey = otel.CodeFunctionNameKey
+	// CodeFilePathKey is the source file, e.g. "vless/vision.go".
+	CodeFilePathKey = otel.CodeFilePathKey
+	// CodeLineNumberKey is the line within CodeFilePathKey, e.g. 259.
+	CodeLineNumberKey = otel.CodeLineNumberKey
+)
+
+// Exception
+
+// ExceptionMessageKey is the exception message, e.g.
+// "runtime error: slice bounds out of range [:172] with capacity 128".
+const ExceptionMessageKey = otel.ExceptionMessageKey

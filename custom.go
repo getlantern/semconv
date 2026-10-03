@@ -247,3 +247,16 @@ const (
 	GrantCodeKey      attribute.Key = "grant.code"      // e.g. "otfsurge", "drlvision", "neabuild"
 	GrantIndicatorKey attribute.Key = "grant.indicator" // number only (e.g. "2.3", "1.1")
 )
+
+// Process crashes (a Go runtime crash dump reported on the next start). The
+// crash site uses the standard Code* and Exception* keys; these cover what
+// OTel has no key for.
+const (
+	// CrashTypeKey classifies the crash, e.g. "runtime_panic".
+	CrashTypeKey attribute.Key = "crash.type"
+	// CrashSignatureKey identifies a crash independent of the values involved,
+	// so the same bug groups as one: the panic line with numbers normalised,
+	// plus the crashing function, e.g. "panic: runtime error: slice bounds out
+	// of range [:N] with capacity N @ github.com/sagernet/sing-vmess/vless.(*VisionConn).filterTLS".
+	CrashSignatureKey attribute.Key = "crash.signature"
+)
