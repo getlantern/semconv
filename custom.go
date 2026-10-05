@@ -142,12 +142,15 @@ const (
 	// BanditTokenPrefixKey is a short prefix of the callback probe token used
 	// in logs/spans so operators can correlate entries without leaking the
 	// full token (which acts as the callback capability).
-	BanditTokenPrefixKey                attribute.Key = "bandit.token_prefix"
-	BanditNumCandidateRegionsKey        attribute.Key = "bandit.num_candidate_regions"
-	BanditNumCandidateArmsKey           attribute.Key = "bandit.num_candidate_arms"
-	BanditBlockedArmsKey                attribute.Key = "bandit.blocked_arms"
-	BanditNumSelectedKey                attribute.Key = "bandit.num_selected"
-	BanditSelectedArmsKey               attribute.Key = "bandit.selected_arms"
+	BanditTokenPrefixKey         attribute.Key = "bandit.token_prefix"
+	BanditNumCandidateRegionsKey attribute.Key = "bandit.num_candidate_regions"
+	BanditNumCandidateArmsKey    attribute.Key = "bandit.num_candidate_arms"
+	BanditBlockedArmsKey         attribute.Key = "bandit.blocked_arms"
+	BanditNumSelectedKey         attribute.Key = "bandit.num_selected"
+	BanditSelectedArmsKey        attribute.Key = "bandit.selected_arms"
+	// BanditSelectedTracksKey lists the track name of each selected arm,
+	// index-aligned with BanditSelectedArmsKey.
+	BanditSelectedTracksKey             attribute.Key = "bandit.selected_tracks"
 	BanditBlockedRouteCountKey          attribute.Key = "bandit.blocked_route_count"
 	BanditDeprecatedCountKey            attribute.Key = "bandit.deprecated_count"
 	BanditReaperExpiredProbesKey        attribute.Key = "bandit.reaper.expired_probes"
