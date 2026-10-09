@@ -267,3 +267,10 @@ const (
 	// of range [:N] with capacity N @ github.com/sagernet/sing-vmess/vless.(*VisionConn).filterTLS".
 	CrashSignatureKey attribute.Key = "crash.signature"
 )
+
+const (
+	// GeoSourceKey defines how a geolocation was determined.
+	//  - geolocation database (e.g. "maxmind")
+	//  - client attestation (e.g. "client")
+	GeoSourceKey attribute.Key = "geo.source"
+)
