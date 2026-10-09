@@ -184,6 +184,10 @@ const (
 	ProxyTrackKey            attribute.Key = "proxy.track"
 	ProxyProviderKey         attribute.Key = "proxy.provider"
 	ProxyFrontendProviderKey attribute.Key = "proxy.frontend_provider"
+	// ProxyBinaryKey names the program serving the proxy (lantern-box,
+	// http-proxy-lantern). service.name says where it is deployed, and VPS
+	// deployments report vps-proxy for both binaries.
+	ProxyBinaryKey attribute.Key = "proxy.binary"
 )
 
 // Proxy connection attributes
