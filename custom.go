@@ -290,9 +290,10 @@ const (
 	KindlingErrorKey attribute.Key = "kindling.error"
 )
 
-// KindlingTransportAttr returns key scoped to one transport, e.g.
-// kindling.smart.outcome for KindlingOutcomeKey and "smart", so a span can
-// carry every raced transport's outcome as attributes that queries group by.
+// KindlingTransportAttr returns key scoped to one transport by name, e.g.
+// kindling.smart.outcome for KindlingOutcomeKey and "smart", so queries can
+// group a span by each transport's outcome. Transports sharing a name share the
+// key, and the last one written wins; per-attempt events keep every attempt.
 // Transport names come from the caller's kindling configuration, which bounds
 // their cardinality.
 func KindlingTransportAttr(transport string, key attribute.Key) attribute.Key {
