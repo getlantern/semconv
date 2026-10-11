@@ -3,7 +3,11 @@
 // contains Lantern-specific keys.
 package semconv
 
-import "go.opentelemetry.io/otel/attribute"
+import (
+	"strings"
+
+	"go.opentelemetry.io/otel/attribute"
+)
 
 // Lantern cloud Proxies
 const (
@@ -267,3 +271,30 @@ const (
 	// of range [:N] with capacity N @ github.com/sagernet/sing-vmess/vless.(*VisionConn).filterTLS".
 	CrashSignatureKey attribute.Key = "crash.signature"
 )
+
+// Kindling races (getlantern/kindling): which bootstrap transport carried a
+// request and what happened to each one raced.
+const (
+	// KindlingWinnerKey is the transport whose response was returned, empty if none.
+	KindlingWinnerKey attribute.Key = "kindling.winner"
+	// KindlingTransportKey names the transport an attempt event describes.
+	KindlingTransportKey attribute.Key = "kindling.transport"
+	// KindlingOutcomeKey is an attempt's outcome: connect_failed, request_failed,
+	// retry_status, won or unfinished.
+	KindlingOutcomeKey attribute.Key = "kindling.outcome"
+	// KindlingStatusKey is the HTTP status an attempt got, set only when a response arrived.
+	KindlingStatusKey attribute.Key = "kindling.status"
+	// KindlingElapsedMsKey is the time from the request's start to the attempt's outcome.
+	KindlingElapsedMsKey attribute.Key = "kindling.elapsed_ms"
+	// KindlingErrorKey is why an attempt failed.
+	KindlingErrorKey attribute.Key = "kindling.error"
+)
+
+// KindlingTransportAttr returns key scoped to one transport, e.g.
+// kindling.smart.outcome for KindlingOutcomeKey and "smart", so a span can
+// carry every raced transport's outcome as attributes that queries group by.
+// Transport names come from the caller's kindling configuration, which bounds
+// their cardinality.
+func KindlingTransportAttr(transport string, key attribute.Key) attribute.Key {
+	return attribute.Key("kindling." + transport + strings.TrimPrefix(string(key), "kindling"))
+}
