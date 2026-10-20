@@ -163,6 +163,14 @@ const (
 	BanditCacheHitKey                   attribute.Key = "bandit.cache_hit"
 )
 
+// Build
+const (
+	// BuildTimeKey is when the running build was made, in UTC RFC 3339, e.g.
+	// "2026-10-18T22:30:00Z". OTel has no standard key for it; the build's commit
+	// is VCSRefHeadRevisionKey.
+	BuildTimeKey attribute.Key = "build.time"
+)
+
 // Client Info
 const (
 	ClientDeviceIDKey           attribute.Key = "client.device_id"

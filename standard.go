@@ -18,6 +18,14 @@ const (
 	ServiceNamespaceKey = otel.ServiceNamespaceKey
 )
 
+// Build
+const (
+	// VCSRefHeadRevisionKey is the commit the running build was made from, e.g.
+	// "25a8d99". It tells apart builds that share a ServiceVersionKey, such as the
+	// betas of one release.
+	VCSRefHeadRevisionKey = otel.VCSRefHeadRevisionKey
+)
+
 // Cloud
 const (
 	// CloudProviderKey is the cloud provider, e.g. "aws", "gcp", "azure".
