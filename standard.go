@@ -77,6 +77,8 @@ const (
 	HTTPResponseStatusCodeKey = otel.HTTPResponseStatusCodeKey
 	// HTTPRouteKey is the matched route pattern, e.g. "/users/:id".
 	HTTPRouteKey = otel.HTTPRouteKey
+	// URLFullKey is the whole URL, e.g. "https://example.com/a?b=c".
+	URLFullKey = otel.URLFullKey
 )
 
 // Geo
