@@ -298,6 +298,40 @@ const (
 	KindlingErrorKey attribute.Key = "kindling.error"
 )
 
+// Pinger testers: the radiance-tester and flashlight-tester containers the
+// pinger runs to reach a URL from a residential exit, directly or through an
+// assigned tunnel. Standard keys describe the fetch (URLFullKey,
+// HTTPResponseStatusCodeKey, NetworkPeerAddressKey); these are the tester's own.
+const (
+	// TesterRunIDKey is the pinger run the tester belongs to; it is the trace ID
+	// of the pinger's pingTrack span.
+	TesterRunIDKey attribute.Key = "tester.run_id"
+	// TesterModeKey is "direct" for a fetch from the residential exit itself or
+	// "client" for one through the client tunnel.
+	TesterModeKey attribute.Key = "tester.mode"
+	// TesterStickyKey is whether the client was pinned to a given configuration
+	// rather than fetching one.
+	TesterStickyKey attribute.Key = "tester.sticky"
+	// TesterTargetTagKey is the outbound or endpoint tag the client was pinned to.
+	TesterTargetTagKey attribute.Key = "tester.target_tag"
+	// TesterFetchTimeoutSecondsKey is the budget of each phase: connecting and
+	// fetching.
+	TesterFetchTimeoutSecondsKey attribute.Key = "tester.fetch_timeout_seconds"
+	// TesterProxiedKey is whether the fetch went through the client's SOCKS
+	// listener.
+	TesterProxiedKey attribute.Key = "tester.proxied"
+	// TesterCurlExitCodeKey is curl's exit code for the fetch; 0 means the
+	// origin answered, whatever the status.
+	TesterCurlExitCodeKey attribute.Key = "tester.curl_exit_code"
+	// TesterCurlErrorKey is curl's error message when it did not reach the origin.
+	TesterCurlErrorKey attribute.Key = "tester.curl_error"
+	// TesterTotalMsKey is the fetch's total time as curl measured it.
+	TesterTotalMsKey attribute.Key = "tester.total_ms"
+	// TesterFirstByteMsKey is the time to the first response byte as curl
+	// measured it.
+	TesterFirstByteMsKey attribute.Key = "tester.first_byte_ms"
+)
+
 // KindlingTransportAttr returns key scoped to one transport by name, e.g.
 // kindling.smart.outcome for KindlingOutcomeKey and "smart", so queries can
 // group a span by each transport's outcome. Transports sharing a name share the
