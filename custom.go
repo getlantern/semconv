@@ -163,6 +163,15 @@ const (
 	BanditCacheHitKey                   attribute.Key = "bandit.cache_hit"
 )
 
+const (
+	// BanditReaperLedgerIndexKey reports whether indexed scans are enabled
+	// for this probe-reaper pass, including passes that perform a full sweep.
+	BanditReaperLedgerIndexKey attribute.Key = "bandit.reaper.ledger_index"
+	// BanditReaperSweepKey reports whether this pass scans all active ASNs
+	// rather than only the ledger index.
+	BanditReaperSweepKey attribute.Key = "bandit.reaper.sweep"
+)
+
 // Build
 const (
 	// BuildTimeKey is when the running build was made, in UTC RFC 3339, e.g.
