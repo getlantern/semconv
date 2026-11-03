@@ -216,12 +216,20 @@ const (
 	ProxyInboundKey     attribute.Key = "proxy.inbound"      // sing-box
 	ProxyInboundTypeKey attribute.Key = "proxy.inbound_type" // sing-box
 	ProxyOutboundKey    attribute.Key = "proxy.outbound"     // sing-box
+	// ProxyDestinationCountryKey is the ISO 3166-1 alpha-2 country of the
+	// address a proxy dials for a client, by GeoIP. Paired with
+	// GeoCountryISOCodeKey (the client's country), it shows how much traffic
+	// we carry to sites in the client's own country.
+	ProxyDestinationCountryKey attribute.Key = "proxy.destination_country"
 )
 
 // Proxy metric names
 const (
 	ProxyMetricIO          = "proxy.io"          // generic: bytes through a proxy, by direction
 	ProxyMetricActivations = "proxy.activations" // unbounded: times proxy mode was turned on and proxied traffic
+	// ProxyMetricDestinationIO is bytes through a proxy by client country,
+	// destination country and direction, with nothing per client.
+	ProxyMetricDestinationIO = "proxy.destination.io"
 )
 
 // Geneva server-side packet manipulation — metric names
