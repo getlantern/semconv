@@ -232,6 +232,37 @@ const (
 	ProxyMetricDestinationIO = "proxy.destination.io"
 )
 
+// Datacap — metric names
+const (
+	// DatacapMetricAllotmentCrossed counts allotments reaching a
+	// DatacapThresholdKey, once per allotment and threshold while its cap holds.
+	DatacapMetricAllotmentCrossed = "datacap.allotment.crossed"
+	// DatacapMetricCapReached counts allotments reaching their cap, once per
+	// allotment while its cap holds.
+	DatacapMetricCapReached         = "datacap.cap_reached"
+	DatacapMetricOverCapBytes       = "datacap.over_cap_bytes"
+	DatacapMetricReportUsageRecords = "datacap.report_usage.records"
+	DatacapMetricSync               = "datacap.sync"
+)
+
+// Datacap — attribute keys
+const (
+	// DatacapCountryKey is the country whose cap an allotment is metered
+	// under. It is reported by the client or kept from an earlier uncapped
+	// report, so it can differ from GeoCountryISOCodeKey.
+	DatacapCountryKey attribute.Key = "datacap.country"
+	// DatacapThresholdKey is "0" for a new allotment, a share of the cap
+	// ("25%", "50%", "75%"), or a size for an uncapped allotment (e.g. "512M").
+	DatacapThresholdKey attribute.Key = "datacap.threshold"
+	// DatacapHoursToCapKey buckets the hours from an allotment's start to its
+	// cap: "<1", "1-4", "4-12", "12-24" or "unknown".
+	DatacapHoursToCapKey attribute.Key = "datacap.hours_to_cap"
+	// DatacapResultKey is what the API did with a usage record (metered,
+	// duplicate, deferred, exempt, invalid, error, failed) or a sync request
+	// (hit, miss, pro, error).
+	DatacapResultKey attribute.Key = "datacap.result"
+)
+
 // Geneva server-side packet manipulation — metric names
 //
 // Deliberately absent: any metric or attribute carrying a strategy DNA or
